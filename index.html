@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binaural</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+
+    <header class="header">
+      <h1 class="title">Binaural</h1>
+      <p id="status" class="status" aria-live="polite">Paused</p>
+    </header>
+
+    <section class="center">
+      <div class="beat-display">
+        <span id="beat" class="beat-value">10</span>
+        <span class="beat-unit">Hz</span>
+      </div>
+      <p class="beat-label">Beat frequency</p>
+
+      <button id="play" class="play" type="button" aria-pressed="false" aria-label="Play">
+        <span class="icon icon-play" aria-hidden="true"></span>
+        <span class="icon icon-pause" aria-hidden="true"><span></span><span></span></span>
+      </button>
+
+      <button id="generate" class="generate" type="button">Generate new tone set</button>
+    </section>
+
+    <section class="tech" aria-label="Channel frequencies">
+      <div class="tech-item tech-left">
+        <span class="tech-label">Left</span>
+        <span class="tech-value"><span id="left">395</span> Hz</span>
+      </div>
+      <div class="tech-item tech-carrier">
+        <span class="tech-label">Carrier</span>
+        <span class="tech-value"><span id="carrier">400</span> Hz</span>
+      </div>
+      <div class="tech-item tech-right">
+        <span class="tech-label">Right</span>
+        <span class="tech-value"><span id="right">405</span> Hz</span>
+      </div>
+    </section>
+
+    <section class="volume">
+      <label for="volume" class="volume-label">Master volume</label>
+      <input id="volume" class="volume-slider" type="range" min="0" max="100" value="30">
+    </section>
+
+    <footer class="notice">
+      <p>Stereo headphones are required.</p>
+      <p>For audio experimentation only. This application does not provide medical treatment.</p>
+    </footer>
+
+  </main>
+
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
